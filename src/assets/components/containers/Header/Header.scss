@@ -1,0 +1,97 @@
+@use "../../../sass/base" as b;
+
+@mixin centerContent($gap) {
+    display: flex;
+    align-items: center;
+    grid-gap: $gap;
+}
+
+#header {
+    position: relative;
+}
+
+.header {
+    background-color: b.$prussian-blue;
+
+    &__container {
+        @include b.container;
+        @include centerContent(0px);
+        justify-content: space-between;
+        padding: 7px 0;
+    }
+
+    &__content {
+        @include centerContent(15px);
+
+        &-link {
+            font-size: 13px;
+            color: b.$white;
+            font-style: normal;
+            @include centerContent(2px);
+            transition: color 0.2s ease;
+            cursor: pointer;
+            font-weight: 500;
+
+            &:hover {
+                color: b.$orange-soda;
+            }
+
+            i {
+                color: b.$orange-soda;
+                font-size: 16px;
+            }
+        }
+
+        &__social {
+            @include centerContent(10px);
+            justify-content: center;
+
+            i {
+                font-size: 16px;
+                color: b.$white;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: b.$orange-soda;
+                }
+
+            }
+        }
+
+        &-cta {
+            display: inline-block;
+            background-color: b.$orange-soda;
+            color: b.$white;
+            text-transform: capitalize;
+            padding: 7px 15px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: b.$dark-orange-soda;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .header__container {
+        flex-direction: column;
+        grid-gap: 10px;
+    }
+
+    .header__content {
+        grid-column-gap: 30px;
+        grid-row-gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &-cta {
+            padding: 5px 20px;
+            font-size: 14px;
+        }
+    }
+}

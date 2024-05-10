@@ -1,0 +1,74 @@
+@use "../../sass/base" as b;
+
+.animity-card {
+    background-color: b.$white;
+    box-shadow: b.$shadow-1;
+    border-radius: 8px;
+    width: 95%;
+    max-width: 280px;
+    padding: 50px 30px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: b.$orange-soda;
+    }
+
+    &:hover > &-title {
+        color: b.$white;
+    }
+
+    &-title {
+        color: b.$dark-jungle-green;
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: capitalize;
+        margin-top: 15px;
+        transition: color 0.3s ease;
+    }
+
+    &__figure i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        font-size: 30px;
+        color: b.$orange-soda;
+        background-color: b.$seashell;
+        font-weight: 400;
+    }
+
+    &-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: b.$white;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        bottom: -20px;
+        transform: translateX(-50%);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateX(-50%) scale(1.12);
+        }
+
+        &:hover > i {
+            color: b.$orange-soda;
+        }
+
+        i {
+            color: b.$cadet;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+    }
+}

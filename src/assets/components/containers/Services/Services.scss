@@ -1,0 +1,16 @@
+@use "../../../sass/base" as b;
+
+.services {
+    background-color: b.$cultured-2;
+    padding: 80px 0;
+
+    &__container {
+        @include b.container;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        grid-gap: 30px;
+        margin-top: 30px;
+    }
+}

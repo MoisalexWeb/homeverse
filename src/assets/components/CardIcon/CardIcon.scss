@@ -1,0 +1,28 @@
+@use "../../sass/base" as b;
+
+.card-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+
+    &-text {
+        text-transform: capitalize;
+        color: b.$cadet;
+        font-size: 14px;
+    }
+
+    i {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: b.$orange-soda;
+        background-color: b.$light-orange-soda;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 35px;
+        border-radius: 50%;
+        font-size: 20px;
+    }
+}

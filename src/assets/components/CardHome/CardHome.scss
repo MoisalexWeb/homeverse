@@ -1,0 +1,282 @@
+@use "../../sass/base" as b;
+
+.card-home {
+    box-shadow: b.$shadow-2;
+    border: 1px solid b.$alice-blue;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+
+    &__figure {
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+        width: 100%;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to top, hsla(0, 0%, 0%, 0.95), transparent 30%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        &-img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+
+        &:hover>&-img {
+            transform: scale(1.08);
+        }
+
+        &-purpose {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: b.$white;
+            background-color: b.$yellow-green;
+            font-size: 14px;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 3px 12px;
+            z-index: 5;
+
+            &.sales {
+                background-color: b.$orange-soda;
+            }
+        }
+
+        &__details {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            width: 95%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 5;
+
+            &-location {
+                color: b.$white;
+                font-style: normal;
+                font-size: 14px;
+                transition: color 0.3s ease;
+                cursor: default;
+
+                &:hover {
+                    color: b.$orange-soda;
+                }
+
+                i {
+                    margin-right: 3px;
+                }
+            }
+
+            &__icons {
+                display: flex;
+                grid-gap: 15px;
+
+                button {
+                    background: none;
+                    display: flex;
+                    align-items: center;
+                    grid-gap: 4px;
+                    color: b.$white;
+                    transition: color 0.3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: b.$orange-soda;
+                    }
+                }
+            }
+        }
+    }
+
+    &__texts {
+        padding: 30px;
+        width: 100%;
+    }
+
+    &__details {
+        color: b.$cadet;
+
+        &-price {
+            color: b.$orange-soda;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        &-title {
+            color: b.$dark-jungle-green;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: b.$orange-soda;
+            }
+        }
+
+        &-description {
+            font-size: 15px;
+            line-height: 1.9;
+            margin: 20px 0;
+        }
+
+        &__home {
+            display: flex;
+            align-items: center;
+
+            &__icon {
+                display: grid;
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+                border-left: 1px solid b.$cultured-1;
+
+                &--first {
+                    padding: 0;
+                    padding-right: 20px;
+                    border: none;
+                }
+
+                &--last {
+                    padding-right: 0 !important;
+                }
+
+                div {
+                    display: flex;
+                    grid-gap: 5px;
+                    align-items: center;
+                }
+
+                strong {
+                    font-weight: 600;
+                }
+
+                i {
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+
+                span {
+                    font-size: 14px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+
+    &__agent {
+        border-top: 1px solid b.$cultured-1;
+        margin-top: 30px;
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__perfil {
+            display: flex;
+            align-items: center;
+            grid-gap: 10px;
+
+            &__info {
+                display: flex;
+                flex-direction: column;
+
+                &-name {
+                    text-transform: capitalize;
+                    color: b.$dark-jungle-green;
+                    font-weight: 500;
+                    line-height: 15px;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: b.$orange-soda;
+                    }
+                }
+
+                &-profesion {
+                    font-size: 13.5px;
+                    text-transform: capitalize;
+                    color: b.$cadet;
+                }
+            }
+
+            &-img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-gap: 10px;
+
+            &-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+                background: b.$cultured-2;
+                transition: background 0.3s ease;
+                cursor: pointer;
+
+                &:hover {
+                    background: b.$orange-soda;
+                }
+
+                &:hover>i {
+                    color: b.$white;
+                }
+
+                i {
+                    transition: color 0.3s ease;
+                    color: b.$cadet;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .card-home__agent {
+        flex-direction: column;
+        grid-gap: 15px;
+    }
+
+    .card-home__details-title {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card-home__details__home {
+        flex-direction: column;
+        align-items: start;
+
+        &__icon {
+            padding: 10px 0;
+            border: none;
+            border-top: 1px solid b.$cultured-1;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@use "../../../sass/base" as b;
+
+.animities {
+    background-color: b.$cultured-2;
+
+    &__container {
+        @include b.container;
+    }
+}

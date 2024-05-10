@@ -1,0 +1,51 @@
+@use "../../../sass/base" as b;
+
+.property {
+    @include b.container;
+
+    &__container {
+        width: 100%;
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 35%);
+        grid-gap: 20px;
+        overflow-x: auto;
+        padding: 0 15px 50px;
+
+        @media screen and (max-width: 1300px) {
+            grid-template-columns: repeat(4,45%);
+        }
+
+        @media screen and (max-width: 950px) {
+            grid-template-columns: repeat(4,53%);
+        }
+
+        @media screen and (max-width: 800px) {
+            grid-template-columns: repeat(4,65%);
+        }
+
+        @media screen and (max-width: 680px) {
+            grid-template-columns: repeat(4,80%);
+        }
+
+        @media screen and (max-width: 550px) {
+            grid-template-columns: repeat(4,100%);
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        &::-webkit-scrollbar {
+            background: b.$cultured-2;
+            outline: 1px solid b.$cadet;
+            outline-offset: -0.98px;
+            border-radius: 10px;
+            height: 12px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: b.$cadet;
+            border: 2px solid b.$cultured-2;
+            border-radius: 10px;
+        }
+    }
+}

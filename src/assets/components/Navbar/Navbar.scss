@@ -1,0 +1,228 @@
+@use "../../sass/base" as b;
+
+.navbar {
+    background-color: b.$white;
+
+    &__container {
+        @include b.container;
+        padding: 25px 10px 25px 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo-img {
+        width: 220px;
+    }
+
+    &__links__logo {
+        display: none;
+        visibility: hidden;
+    }
+
+    &__links__ul {
+        display: grid;
+        grid-template-columns: repeat(6, max-content);
+        grid-gap: 20px;
+
+        &-link {
+            text-transform: capitalize;
+            transition: color 0.3s ease;
+            color: b.$raisin-black-2;
+            font-weight: 500;
+
+            &:hover {
+                color: b.$orange-soda;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 15px;
+
+        &-btn {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background-color: b.$white;
+            box-shadow: b.$shadow-2;
+            cursor: pointer;
+
+            &:hover > i {
+                color: b.$orange-soda;
+            }
+
+            i {
+                font-size: 20px;
+                font-weight: 500;
+                color: b.$raisin-black-2;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+            &--hamburger {
+                display: none;
+                visibility: hidden;
+            }
+        }
+    }
+
+    .dark-background {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .navbar__links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, max-content);
+        background-color: b.$white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        height: 100vh;
+        width: 350px;
+        padding: 50px 30px;
+        transform: translateX(-103%);
+        transition: transform 0.3s ease;
+
+        &__logo {
+            display: block;
+            visibility: visible;
+            height: max-content;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-bottom: 1px solid b.$cultured-1;
+            
+            &-img {
+                width: 200px;
+            }
+
+            &-close {
+                background: none;
+                cursor: pointer;
+                height: max-content;
+                margin-top: 5px;
+
+                i {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        &__ul {
+            grid-template-columns: 1fr;
+            height: max-content;
+            margin-top: 40px;
+
+            &-link {
+                text-transform: uppercase;
+                font-size: 17px;
+                color: b.$cadet;
+            }
+        }
+    }
+
+    .navbar.show-menu .navbar__links {
+        transform: translateX(0);
+    }
+
+    .navbar__buttons-btn--hamburger {
+        display: block;
+        visibility: visible;
+    }
+
+    .navbar .dark-background {
+        display: block;
+        visibility: visible;
+        background-color: rgba(0,0,0,0.8);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .navbar.show-menu .dark-background {
+        opacity: 1;
+        pointer-events: unset;
+    }
+}
+
+
+@media screen and (max-width: 680px) {
+    .navbar__container {
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar__buttons {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: b.$white;
+        padding: 10px 30px;
+        justify-content: space-between;
+        box-shadow: 0 0px 20px 0 hsl(219deg 56% 21% / 20%);
+        z-index: 10;
+
+        &-btn {
+            box-shadow: none;
+            width: max-content;
+            height: max-content;
+
+            &:hover::after {
+                color: b.$orange-soda;
+            }
+
+            &::after {
+                content: attr(data-text);
+                display: block;
+                font-size: 12px;
+                margin-top: 2px;
+                text-transform: capitalize;
+                color: b.$raisin-black-2;
+                transition: color 0.3s ease;
+            }
+
+            i {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .navbar__buttons {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .navbar__links {
+        width: 100%;
+        max-width: 300px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &__logo-img {
+            width: 180px;
+        }
+    }
+}

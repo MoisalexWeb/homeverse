@@ -1,0 +1,71 @@
+@use "../../sass/base" as b;
+
+.service-card {
+    background-color: b.$white;
+    width: 100%;
+    max-width: 300px;
+    padding: 40px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 15px;
+    align-items: center;
+    text-align: center;
+    box-shadow: b.$shadow-1;
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: b.$orange-soda;
+        transition: width 0.3s ease;
+    }
+
+    &:hover > &-title {
+        color: b.$orange-soda;
+    }
+
+    &-title {
+        font-size: 25px;
+        font-weight: 700;
+        transition: color 0.3s ease;
+        color: b.$dark-jungle-green;
+
+        @media screen and (max-width: 420px) {
+            font-size: 20px;
+        }
+    }
+
+    &-title::first-letter {
+        text-transform: uppercase;
+    }
+
+    &-text {
+        font-size: 14px;
+        color: b.$cadet;
+        line-height: 2;
+    }
+
+    &:hover > &-cta {
+        color: b.$orange-soda;
+    }
+
+    &-cta {
+        color: b.$opal;
+        text-transform: capitalize;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        
+        i {
+            padding-left: 5px;
+        }
+    }
+}

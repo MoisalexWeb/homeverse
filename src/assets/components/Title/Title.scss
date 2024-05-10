@@ -1,0 +1,42 @@
+@use "../../sass/base" as b;
+
+.main-title {
+    color: b.$dark-jungle-green;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 50px;
+    text-transform: capitalize;
+    position: relative;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+        font-size: 30px;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 25px;
+    }
+
+    &-span {
+        display: block;
+        height: max-content;
+        width: max-content;
+        margin: 0 auto;
+        border-radius: 50px;
+        padding: 8px 18px;
+        font-size: 16px;
+        line-height: 20px;
+        color: b.$orange-soda;
+        background-color: b.$light-orange-soda;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+}
+
+.main-title.left {
+    text-align: left;
+}
+
+.main-title-span.left {
+    margin: 0;
+}

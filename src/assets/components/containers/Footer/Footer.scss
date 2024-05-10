@@ -1,0 +1,209 @@
+@use "../../../sass/base" as b;
+
+@mixin gridLinks($gap) {
+    display: flex;
+    flex-direction: column;
+    grid-gap: $gap;
+}
+
+.footer {
+    padding-top: 60px;
+    background-color: b.$raisin-black-1;
+    font-size: 15px;
+
+    &__container {
+        @include b.container;
+        padding: 0;
+        padding-bottom: 60px;
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1fr;
+        justify-items: center;
+        grid-gap: 20px;
+    }
+
+    &__item--home {
+        @include gridLinks(30px);
+    }
+
+    &__item__logo-text {
+        color: b.$white;
+        margin-top: 10px;
+    }
+
+    &__item__contact {
+        @include gridLinks(5px);
+
+        &-link {
+            color: b.$white;
+            transition: color 0.2s ease;
+
+            i {
+                padding-right: 8px;
+            }
+
+            &:hover {
+                color: b.$orange-soda;
+            }
+        }
+    }
+
+    &__item__social {
+        display: flex;
+        grid-gap: 20px;
+
+        &-link {
+            color: b.$white;
+            font-size: 20px;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: b.$orange-soda;
+            }
+        }
+    }
+
+    &__item-title {
+        color: b.$white;
+        font-size: 20px;
+        text-transform: capitalize;
+    }
+
+    &__item__ul {
+        @include gridLinks(10px);
+        margin-top: 20px;
+
+        &-link {
+            color: b.$white;
+            font-size: inherit;
+            text-transform: capitalize;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: b.$orange-soda;
+            }
+
+            &--upper {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &-copy {
+        background-color: b.$raisin-black-2;
+        padding: 30px 5%;
+        text-align: center;
+        color: b.$white;
+        font-size: 17px;
+        word-spacing: 2px;
+
+        @media screen and (max-width: 680px) {
+            margin-bottom: 65px;
+        }
+
+        a {
+            color: b.$orange-soda;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: b.$orange-soda;
+                transition: width 0.2s ease;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 950px) {
+    .footer__container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 60px;
+    }
+
+    .footer__item {
+        justify-self: start;
+
+        &--home {
+            grid-column: span 2;
+            width: 80%;
+        }
+
+        &--company {
+            grid-row: 2/3;
+            grid-column: 1/2;
+        }
+
+        &--services {
+            grid-row: 2/3;
+            grid-column: 2/3;
+        }
+
+        &--customers {
+            grid-row: 2/3;
+            grid-column: 3/4;
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__item--company {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .footer__item--services {
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+
+    .footer__item--customers {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+        grid-row-gap: 40px;
+    }
+
+    .footer__item {
+        grid-column: 1/-1;
+
+        &--home {
+            width: 100%;
+        }
+
+        &--company {
+            grid-row: 2/3;
+        }
+
+        &--services {
+            grid-row: 3/4;
+        }
+
+        &--customers {
+            grid-row: 4/5;
+        }
+
+        &__logo-img {
+            width: 100%;
+            max-width: 220px;
+        }
+    }
+}

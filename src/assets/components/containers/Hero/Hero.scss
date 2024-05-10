@@ -1,0 +1,95 @@
+@use "../../../sass/base" as b;
+
+.hero {
+    background-color: b.$cultured-2;
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        @include b.container;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 30px;
+        height: max-content;
+    }
+
+    &__texts {
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        color: b.$dark-jungle-green;
+
+        &-legend {
+            text-transform: capitalize;
+            font-weight: 600;
+            font-size: 15px;
+
+            i {
+                color: b.$orange-soda;
+                font-size: 16px;
+                padding-right: 5px;
+            }
+        }
+
+        &-title {
+            text-transform: capitalize;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 50px;
+        }
+
+        &-description {
+            font-size: 14px;
+            border-left: 1px solid currentColor;
+            padding-left: 20px;
+            color: b.$cadet;
+            line-height: 30px;
+            max-width: 550px;
+        }
+    }
+
+    &__figure {
+        width: 50%;
+
+        &-img {
+            width: 100%;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 850px) {
+    .hero {
+        height: max-content;
+        padding: 80px 0;
+
+        &__container {
+            flex-direction: column;
+            grid-gap: 50px;
+        }
+
+        &__texts,
+        &__figure {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        &__texts-title {
+            font-size: 45px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .hero__texts-title {
+        font-size: 35px;
+    }
+}

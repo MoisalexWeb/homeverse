@@ -1,0 +1,76 @@
+@use "../../../sass/base" as b;
+
+.about {
+    @include b.container;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+
+    &__figure {
+        position: relative;
+
+        &-img {
+            object-fit: cover;
+
+            &--main {
+                width: 100%;
+            }
+
+            &--little {
+                position: absolute;
+                bottom: 20%;
+                left: 15px;
+                width: 50%;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    &__texts {
+        color: b.$cadet;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: max-content;
+        grid-gap: 30px;
+        align-self: center;
+
+        &-paragraph {
+            font-size: 15px;
+            line-height: 25px;
+        }
+
+        &__card {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 20px;
+            grid-row-gap: 10px;
+            justify-items: flex-start;
+
+            @media screen and (max-width: 600px) {
+                grid-template-columns: 1fr;
+                grid-gap: 20px;
+            }
+        }
+
+        &-message {
+            background-color: b.$light-orange-soda;
+            padding: 20px;
+            border-left: 4px solid b.$orange-soda;
+            font-size: 14px;
+            line-height: 30px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .about__container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+

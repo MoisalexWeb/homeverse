@@ -1,0 +1,58 @@
+@use "./assets/sass/base" as b;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        background: b.$cultured-2;
+        outline: 1px solid b.$cadet;
+        outline-offset: -0.98px;
+        border-radius: 10px;
+        width: 17px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: b.$cadet;
+        border: 2px solid b.$cultured-2;
+        border-radius: 10px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+input,
+button,
+a {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+a {
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
