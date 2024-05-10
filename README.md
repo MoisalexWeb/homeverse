@@ -1,8 +1,20 @@
-# React + Vite
+<div align="center">
+    <img src="./public/readme-images/project-logo.png" />
+    <h2 align="center">Homeverse - Real Estate Website</h2>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    Homeverse es un website de Real Estate 100% responsive,<br />
+    para todos los dispositivos, hecho con React JS y Sass.
 
-Currently, two official plugins are available:
+    <a href="https://moisalexweb.github.io/homeverse/"><strong>➥ Ver Demo</strong></a>
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Demo Screeshots
+![homeverse Desktop Demo](./public/readme-images/desktop.png "Desktop Demo")
+![homeverse Mobile Demo](./public/readme-images/mobile.png "Mobile Demo")
+
+
+## Autor
+
+- Frontend Mentor - [@MoisalexWeb](https://www.frontendmentor.io/profile/moisalexweb)
+- Instagram - [@moisalexweb_sw](https://www.instagram.com/moisalexweb_sw/)
