@@ -1,13 +1,15 @@
-<div align="center">
-    <img src="./public/readme-images/project-logo.png" />
-    <h2 align="center">Homeverse - Real Estate Website</h2>
-
-    Homeverse es un website de Real Estate 100% responsive,<br />
-    para todos los dispositivos, hecho con React JS y Sass.
-
-    <a href="https://moisalexweb.github.io/homeverse/"><strong>➥ Ver Demo</strong></a>
+<div align="center">    
+    <img src="./public/readme-images/project-logo.png" >
+    <h2>Homeverse - Real Estate Website</h2>
+    <p>
+        Homeverse es un website de Real Estate 100% responsive,<br />
+        para todos los dispositivos, hecho con React JS y Sass.
+    </p>
+    
 </div>
 
+## Demo
+- Live site en github pages: [Ver website](https://moisalexweb.github.io/homeverse)
 
 ## Demo Screeshots
 ![homeverse Desktop Demo](./public/readme-images/desktop.png "Desktop Demo")
